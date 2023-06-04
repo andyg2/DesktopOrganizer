@@ -1,0 +1,38 @@
+{
+  "defaults": {
+    "default_directory": "Other"
+  },
+  "extension_directory_map": {
+    ".jpg": "Images",
+    ".png": "Images",
+    ".bmp": "Images",
+    ".gif": "Images",
+    ".mp3": "Music",
+    ".wav": "Music",
+    ".flac": "Music",
+    ".mp4": "Videos",
+    ".avi": "Videos",
+    ".mkv": "Videos",
+    ".docx": "Documents",
+    ".xlsx": "Documents",
+    ".pptx": "Documents",
+    ".txt": "Documents",
+    ".pdf": "Documents",
+    ".csv": "Documents",
+    ".html": "Documents",
+    ".py": "Documents",
+    ".java": "Documents",
+    ".cpp": "Documents",
+    ".ppt": "Documents",
+    ".xls": "Documents",
+    ".doc": "Documents",
+    ".psd": "Documents",
+    ".ai": "Documents",
+    ".svg": "Documents",
+    ".zip": "Archives",
+    ".rar": "Archives",
+    ".7z": "Archives",
+    ".exe": "Programs",
+    ".msi": "Programs"
+  }
+}
