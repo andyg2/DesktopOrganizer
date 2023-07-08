@@ -2,17 +2,23 @@
 
 A simple files organizer in Python to move files into subdirectories based on their types.
 
-## Authors
+## Author
 
 - [@andyg2](https://www.github.com/andyg2)
+
+## Installation
+
+`git clone https://github.com/andyg2/DesktopOrganizer.git`
+`cd DesktopOrganizer`
 
 ## Documentation
 
 `python main.py /messy/directory`
 
-Every file in the root level of that directory will be moved into a subdirectory based on the file type (configurable in config.json).
+Every file in that directory will be moved into a subdirectory based on the file type (configurable in config.json).
+Subdirectories are unaffected.
 
-#### For example
+### For example
 
 `/messy/directory/image.jpg` will be moved to `/messy/directory/Images/jpg/image.jpg`
 
@@ -22,7 +28,7 @@ Unmatched file types will be moved to the `Other` directory.
 
 ## Logging and reverting changes
 
-All file movements are logged to the console and a reversion command is also shown - this reverses the most recent file movements.
+All file movements are logged to the console and to a log file. The log file can also be parsed to revert those changes by executing a vevert command, which is also shown in the console
 
 ```console
 Moved data.csv to /messy/directory/Documents/csv
@@ -33,7 +39,9 @@ Organized files successfully. Run the following command to revert the changes:
 python revert.py /script/path/logs/dtopy-2023-06-05-05-02-50-moved.log
 ```
 
-config.json feel free to update to suit your needs
+## Configuration
+
+config.json - update to suit your needs
 
 ```json
 {
@@ -80,41 +88,31 @@ config.json feel free to update to suit your needs
 
 The repo consists of the following files and basic structure
 
+### config.py
 
+- import json
 
-**config.py**
+### main.py
 
-* import json
+- import os
+- import argparse
+- from organizer import organize_files
 
+### organizer.py
 
+- import os
+- import shutil
+- import datetime
+- from config import get_extension_directory_map, get_default_directory
 
-**main.py**
+### revert.py
 
-* import os
-* import argparse
-* from organizer import organize_files
-
-
-
-**organizer.py**
-
-* import os
-* import shutil
-* import datetime
-* from config import get_extension_directory_map, get_default_directory
-
-
-
-**revert.py**
-
-* import os
-* import shutil
-* import datetime
-* import argparse
-* import json
+- import os
+- import shutil
+- import datetime
+- import argparse
+- import json
 
 ## Badges
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
